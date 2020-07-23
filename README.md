@@ -1,2 +1,2 @@
 # HackTheSummer
-Repository of the HackTheSummer-Project.
+This is the Repository of the HackTheSummer-Project.
