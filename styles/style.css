@@ -1,0 +1,162 @@
+/********** TEXTS **********/
+
+/** Html Body **/
+body {
+	font-family: Helvetia, Calibri, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/** First Headline **/
+h1 {
+	color: #B4DC00;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 5vh;
+	font-weight: bold;
+}
+
+/** Second Headline **/
+h2 {
+	color: #B4DC00;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 4.5vh;
+	font-weight: normal;
+}
+
+/** Text Paragraph **/
+p {
+	color: #444444;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 2.5vh;
+}
+
+/** Separation Line **/
+hr {
+	border: 0;
+	height: 3px;
+	background-color: #C8F000;
+}
+
+/** Text Selection **/
+::-moz-selection: {
+	background: rgba(0, 0, 0, 0.15);
+}
+
+::selection {
+	background: rgba(0, 0, 0, 0.15);
+}
+
+/** Text Section **/
+#text {
+	padding-top: 8vh;
+}
+
+/********** MENU BAR **********/
+
+/** Menu Bar **/
+#menu-bar {
+	position: fixed;
+	width: 100%;
+	height: 8vh;
+	min-height: 40px;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	
+	background-color: #C8F000;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 8px 10px 0px;
+	color: #FFFFFF;
+	
+	display: flex;
+	padding-left: 10vh;
+	justify-content: left;
+	align-items: center;
+	text-align: left;
+	font-size: 5vh;
+	text-shadow: 0.3vh 0.3vh #B4DC00;
+}
+
+/** Menu Bar Icon **/
+.icon {
+	position: fixed;
+	width: 8vh;
+	min-width: 40px;
+	height: 8vh;
+	min-height: 40px;
+	display: block;
+	
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+
+.icon:hover {
+	filter: brightness(95%);
+}
+
+/** Menu Icon **/
+#menu {
+	left: 0;
+	background-image: url(../images/menu.svg);
+}
+
+/** Search Icon **/
+#search {
+	right: 1vw;
+	background-image: url(../images/search.svg);
+}
+
+/********** SIDE NAVIGATION **********/
+
+/** Side Navigation **/
+#side-navigation {
+	position: fixed;
+	padding-top: 8vh;
+	height: 100%;
+	width: 0;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	
+	background-color: #FFFFFF;
+	box-shadow: rgba(0, 0, 0, 0.25) 8px 0px 10px 0px;
+	transition: 0.5s;
+}
+
+#side-navigation a {
+	color: #444444;
+	padding-left: 32px;
+	font-size: 4vh;
+	text-decoration: none;
+}
+
+#side-navigation hr {
+	border: 0;
+	margin-left: 15px;
+	margin-right: 15px;
+	height: 1px;
+	background-color: #DDDDDD;
+}
+
+/********** QR-SCANNING ICON **********/
+
+/** QR-Code Scanner Icon **/
+#qr-scanner {
+	width: 12vh;
+	min-width: 50px;
+	height: 12vh;
+	min-width: 50px;
+	bottom: 10%;
+	right: 10%;
+	z-index: 2;
+	
+	background-image: url(../images/qr_scanner.svg);
+	filter: drop-shadow(rgba(0, 0, 0, 0.25) 8px 8px 10px);
+}
+
+#qr-scanner:hover {
+	filter: drop-shadow(rgba(0, 0, 0, 0.4) 8px 8px 10px);
+}
