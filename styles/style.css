@@ -2,41 +2,43 @@
 
 /** Html Body **/
 body {
-	font-family: Helvetia, Calibri, sans-serif;
 	margin: 0;
 	padding: 0;
+	font-family: Segoe UI, Helvetica, sans-serif;
 }
 
 /** First Headline **/
 h1 {
-	color: #B4DC00;
 	padding-left: 20px;
 	padding-right: 20px;
-	font-size: 5vh;
+	color: #B4DC00;
+	font-size: 42px;
 	font-weight: bold;
 }
 
 /** Second Headline **/
 h2 {
-	color: #B4DC00;
 	padding-left: 20px;
 	padding-right: 20px;
-	font-size: 4.5vh;
+	color: #B4DC00;
+	font-size: 36px;
 	font-weight: normal;
 }
 
 /** Text Paragraph **/
 p {
-	color: #444444;
 	padding-left: 20px;
 	padding-right: 20px;
-	font-size: 2.5vh;
+	color: #444444;
+	font-size: 24px;
 }
 
 /** Separation Line **/
 hr {
-	border: 0;
 	height: 3px;
+	border: 0;
+	margin-left: 20px;
+	margin-right: 20px;
 	background-color: #C8F000;
 }
 
@@ -50,8 +52,8 @@ hr {
 }
 
 /** Text Section **/
-#text {
-	padding-top: 8vh;
+#main {
+	padding-top: 80px;
 }
 
 /********** MENU BAR **********/
@@ -59,34 +61,32 @@ hr {
 /** Menu Bar **/
 #menu-bar {
 	position: fixed;
-	width: 100%;
-	height: 8vh;
-	min-height: 40px;
+	z-index: 1;
 	top: 0;
 	left: 0;
-	z-index: 1;
+	
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	width: 100%;
+	height: 80px;
+	padding-left: 100px;
 	
 	background-color: #C8F000;
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 8px 10px 0px;
 	color: #FFFFFF;
 	
-	display: flex;
-	padding-left: 10vh;
-	justify-content: left;
-	align-items: center;
+	font-size: 42px;
+	text-shadow: 3px 3px #B4DC00;
 	text-align: left;
-	font-size: 5vh;
-	text-shadow: 0.3vh 0.3vh #B4DC00;
 }
 
-/** Menu Bar Icon **/
+/** Icon **/
 .icon {
 	position: fixed;
-	width: 8vh;
-	min-width: 40px;
-	height: 8vh;
-	min-height: 40px;
-	display: block;
+	display: block;	
+	width: 80px;
+	height: 80px;
 	
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -105,7 +105,7 @@ hr {
 
 /** Search Icon **/
 #search {
-	right: 1vw;
+	right: 10px;
 	background-image: url(../images/search.svg);
 }
 
@@ -114,44 +114,84 @@ hr {
 /** Side Navigation **/
 #side-navigation {
 	position: fixed;
-	padding-top: 8vh;
-	height: 100%;
-	width: 0;
+	z-index: 3;
 	top: 0;
 	left: 0;
-	z-index: 2;
+	
+	overflow-x: hidden;
+	width: 0;
+	height: 100%;
+	padding-top: 140px;
+	transition: 0.5s;
 	
 	background-color: #FFFFFF;
 	box-shadow: rgba(0, 0, 0, 0.25) 8px 0px 10px 0px;
-	transition: 0.5s;
 }
 
+/** Side Navigation Title **/
+#side-navigation div {
+	position: fixed;
+	top: 0;
+	left: 0;
+	
+	overflow-x: hidden;
+	width: inherit;
+	height: 120px;
+	min-height: 50px;
+	
+	background-color: #C8F000;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 8px 10px 0px;
+	color: #FFFFFF;
+	
+	font-size: 36px;
+	text-shadow: 3px 3px #B4DC00;
+}
+
+/** Settings Icon **/
+#settings {
+	position: absolute;
+	top: 1vh;
+	right: 0;
+	
+	width: 60px;
+	height: 60px;
+	background-image: url(../images/settings.svg);
+}
+
+/** Side Navigation Entry **/
 #side-navigation a {
+	display: block;
+	padding-left: 30px;
+	transition: 0.3s;
+	
 	color: #444444;
-	padding-left: 32px;
-	font-size: 4vh;
+	font-size: 24px;
 	text-decoration: none;
 }
 
+#side-navigation a:hover {
+	font-weight: bold;
+	text-shadow: 3px 3px #DDDDDD;
+}
+
 #side-navigation hr {
+	height: 1px;
 	border: 0;
 	margin-left: 15px;
 	margin-right: 15px;
-	height: 1px;
 	background-color: #DDDDDD;
 }
 
-/********** QR-SCANNING ICON **********/
+/********** QR-SCANNING **********/
 
 /** QR-Code Scanner Icon **/
 #qr-scanner {
-	width: 12vh;
-	min-width: 50px;
-	height: 12vh;
-	min-width: 50px;
+	z-index: 2;
 	bottom: 10%;
 	right: 10%;
-	z-index: 2;
+	
+	width: 100px;
+	height: 100px;
 	
 	background-image: url(../images/qr_scanner.svg);
 	filter: drop-shadow(rgba(0, 0, 0, 0.25) 8px 8px 10px);
@@ -159,4 +199,38 @@ hr {
 
 #qr-scanner:hover {
 	filter: drop-shadow(rgba(0, 0, 0, 0.4) 8px 8px 10px);
+}
+
+/********** FOOTER **********/
+
+/** Footer **/
+footer {
+	top: 0;
+	left: 0;
+	
+	width: 100%;
+	height: 0;
+	min-height: 100px;
+	background-color: #DDDDDD;
+}
+
+footer #side-info {
+	position: relative;
+	font-size: 14px;
+}
+
+footer ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+footer h3 {
+	color: #444444;	
+}
+
+footer a {
+	color: #444444;
+	font-size: 18px;
+	text-decoration: none;
 }
