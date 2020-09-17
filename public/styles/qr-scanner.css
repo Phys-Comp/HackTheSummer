@@ -1,0 +1,17 @@
+/********** QR-SCANNER **********/
+
+/* HTML Body */
+body {
+	overflow-y: hidden;
+}
+
+/** QR-Code Information Text **/
+#qr-info {
+	margin: 4vh auto;
+	font-size: 3.2vh;
+}
+
+/** QR-Scanner Canvas **/
+#qr-canvas {
+	width: 100%;
+}

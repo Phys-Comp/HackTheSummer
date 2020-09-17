@@ -1,0 +1,498 @@
+/********** LAYOUT **********/
+
+/** HTML Body **/
+body {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	box-sizing: border-box;
+	color: #444444;
+	font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+/** First Headline **/
+h1 {
+	margin: 1vh 0;
+	border-bottom: 0.3vh solid #C8F000;
+	padding-bottom: 0.5vh;
+	color: #C8F000;
+	font-size: 4.2vh;
+	font-weight: bold;
+}
+
+/** Second Headline **/
+h2 {
+	margin: 0;
+	padding: 0;
+	color: #B4DC00;
+	font-size: 3.6vh;
+	font-weight: normal;
+}
+
+/** Third Headline **/
+h3 {
+	margin: 1vh 2vh;
+	color: #444444;
+	font-size: 3.2vh;
+	font-weight: normal;
+}
+
+/** Fourth Headline **/
+h4 {
+	margin: 0;
+	padding: 0;
+	color: #444444;
+	font-size: 3vh;
+	font-weight: normal;
+}
+
+/** Fifth Headline **/
+h5 {
+	margin: 0;
+	padding: 0;
+	color: #AAAAAA;
+	font-size: 2vh;
+	font-weight: normal;
+}
+
+/** Text Paragraph **/
+p {
+	margin: 0;
+	padding: 0;
+	color: #AAAAAA;
+	font-size: 2.4vh;
+}
+
+/** Text Link **/
+a {
+	margin: 0;
+	padding: 0;
+	color: #AAAAAA;
+	font-size: 2.4vh;
+}
+
+/** Separation Line **/
+hr {
+	margin: 1vh 1.5vh;
+	border: 0;
+	width: calc(100% - 2vh);
+	height: 1px;
+	background-color: #DDDDDD;
+}
+
+/** Image **/
+img {
+	margin: 2vh;
+	width: auto 100%;
+	max-width: 100%;
+	max-height: 20vh;
+}
+
+/** Text Selection **/
+::-moz-selection: {
+	background: rgba(0, 0, 0, 0.15);
+}
+::selection {
+	background: rgba(0, 0, 0, 0.15);
+}
+
+/** Scrollbar **/
+* {
+	scrollbar-color: #AAAAAA #DDDDDD;
+	scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+	width: 1.2vh;
+}
+::-webkit-scrollbar-track {
+	background: #DDDDDD;
+}
+::-webkit-scrollbar-thumb {
+	border-radius: 0.6vh;
+	background-color: #AAAAAA;
+}
+
+/********** START SCREEN **********/
+
+/** Icon **/
+.icon {
+	width: 8vh;
+	height: 8vh;
+	display: block;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+.icon:hover {
+	filter: brightness(95%);
+}
+
+/** Smartphone Icon **/
+.smartphone {
+	position: relative;
+	top: 50%;
+	margin: auto;
+	border: 0.8vh #444444 solid;
+	border-top-width: 3vh;
+	border-bottom-width: 3vh;
+	border-radius: 1.8vh;
+	width: 18vh;
+	height: 32vh;
+	overflow: hidden;
+	box-shadow: rgba(0, 0, 0, 0.35) 0.4vh 0.4vh 0.5vh 0;
+}
+
+/** Information Text **/
+.info {
+	margin: 8vh auto;
+	width: 75%;
+	color: #444444;
+	text-align: center;
+}
+
+/** QR-Code Icon **/
+#qr-code {
+	margin: 50% auto;
+	width: 10vh;
+	height: auto 100%;
+	display: block;
+	cursor: pointer;
+}
+
+/********** PRODUCT INFORMATION **********/
+
+/** Content Section **/
+.content {
+	margin: auto;
+	width: 90%;
+}
+
+/** Card Block **/
+.card {
+	margin: 4vh 0;
+	border-radius: 0.5vh;
+	padding: 1vh 3vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 0 2vh 0;
+}
+
+/** Expand Icon **/
+.expand {
+	position: relative;
+	right: 0;
+	padding: 0.8vh;
+	cursor: pointer;
+	color: #AAAAAA;
+	font-size: 3.6vh;
+}
+
+/** Whitespace Separation **/
+.whitespace {
+	margin: 1vh 0;
+	height: 0;
+}
+
+/** Product Description **/
+.description {
+	color: #444444;
+}
+
+/** Content Row **/
+.row {
+	position: relative;
+	margin: 1vh 0;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+/** Content Column **/
+.column {
+	display: flex;
+	flex-direction: column;
+}
+
+/** Centered Content **/
+.center {
+	align-items: center;
+	justify-content: center;
+}
+
+/** Wrapped Content **/
+.wrap {
+	flex-wrap: wrap;
+}
+
+/** Space Bwetween Content **/
+.space {
+	justify-content: space-between;
+}
+
+/** Hidden Content **/
+.hidden {
+	margin-bottom: 2vh;
+	width: 100%;
+	display: none;
+}
+
+/** Product Property **/
+.property {
+	padding: 2vh;
+	width: 33%;
+	max-height: 20vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+/** Product Property Icon **/
+.property-icon {
+	padding: 2vh 1vh;
+	color: #444444;
+	font-size: 8.4vh;
+}
+
+/** Map **/
+.map {
+	border-radius: 0.5vh;
+	width: 100%;
+	height: 40vh;
+	box-shadow: rgba(0, 0, 0, 0.2) 0 0 1vh 0;
+}
+
+/** OpenLayers Button **/
+.ol-control button {
+	background-color: rgba(180, 220, 0, 0.85) !important;
+}
+
+/** Product Seal **/
+.seal {
+	padding: 2vh;
+	width: 22.5%;
+	min-width: 15vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/** Intolerance Icon **/
+.intolerance {
+	margin: 1vh 2vh;
+	width: 60%;
+	max-height: 10vh;
+}
+
+/** Intolerance Text **/
+.intolerance-text {
+	font-size: 2vh;
+	text-align: center;
+}
+
+/** Nutrition Info Title **/
+.nutrition-info {
+	width: 16vh;
+	font-size: 2.4vh;
+}
+
+/** Nutrition Value **/
+.nutrition-value {
+	padding: 0 1vh;
+	color: #444444;
+	font-size: 2vh;
+	line-height: 3vh;
+}
+
+/** Nutrition Bar Wrapper **/
+.progress {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translate(0, -50%);
+	width: calc(100% - 16vh);
+	height: 3vh;
+	background-color: #DDDDDD;
+}
+
+/** Nutrition Bar Progress **/
+.progress-bar {
+	height: 3vh;
+	background-color: #B4DC00;
+}
+
+/********** MENU BAR **********/
+
+/** Menu Bar **/
+.menu-bar {
+	position: fixed;
+	top: 0;
+	float: right;
+	z-index: 1;
+	width: 100%;
+	height: 8vh;
+	overflow: hidden;	
+	background-color: #C8F000;
+	box-shadow: rgba(0, 0, 0, 0.25) 0 0.8vh 1vh 0;
+}
+
+/** Menu Title **/
+.menu-title {
+	float: left;
+	margin: 1.8vh 1vh 2vh;	
+	color: #FFFFFF;
+	font-size: 4.2vh;
+	line-height: 4.2vh;
+	text-decoration: none;
+	text-shadow: #B4DC00 0.3vh 0.3vh;
+}
+
+/** Search Bar **/
+#search-bar {
+	float: right;
+	margin: 1.8vh 2.4vh;
+	border: none;
+	border-radius: 1.2vh;
+	padding: 1vh;
+	width: 20%;
+	height: 4.4vh;
+	box-shadow: #B4DC00 0.3vh 0.3vh;	
+	color: #444444;
+	font-size: 1.8vh;
+}
+
+/** Menu Icon **/
+#menu-icon {
+	float: left;
+	background-image: url(../images/menu.svg);
+}
+
+/** Back Icon **/
+#back-icon {
+	float: left;
+	background-image: url(../images/back.svg);
+}
+
+/** Search Icon **/
+#search-icon {
+	float: right;
+	margin-right: 1vh;
+	background-image: url(../images/search.svg);
+}
+
+/** Search Placeholder **/
+::-webkit-input-placeholder {
+	opacity: 1;
+	color: #DDDDDD;
+}
+:-ms-input-placeholder {
+	opacity: 1;
+	color: #DDDDDD;
+}
+::placeholder {
+	opacity: 1;
+	color: #DDDDDD;
+}
+
+/********** SIDE NAVIGATION **********/
+
+/** Side Navigation **/
+.side-navigation {
+	position: fixed;
+	z-index: 3;
+	padding-top: 14vh;	
+	width: 0;
+	height: 100%;
+	overflow-x: hidden;
+	transition: 0.5s;
+	box-shadow: rgba(0, 0, 0, 0.25) 0.8vh 0 1vh 0;
+	background-color: #FFFFFF;
+}
+
+/** Navigation Title **/
+.navigation-title {
+	position: fixed;
+	top: 0;	
+	width: inherit;
+	height: 12vh;
+	box-shadow: rgba(0, 0, 0, 0.25) 0 0.8vh 1vh 0;
+	background-color: #C8F000;	
+	font-size: 3.6vh;
+}
+
+/** Navigation Entry **/
+.category {
+	padding-left: 3vh;
+	transition: 0.3s;	
+	color: #444444;
+	font-size: 2.8vh;
+	text-decoration: none;
+}
+.category:hover {
+	font-weight: bold;
+	text-shadow: #DDDDDD 0.3vh 0.3vh;
+}
+
+/** Close Icon **/
+#close-icon {
+	position: absolute;
+	right: 0;
+	margin: 1vh;
+	width: 6vh;
+	height: 6vh;
+	background-image: url(../images/close.svg);
+}
+
+/********** QR-SCANNING **********/
+
+/** QR-Code Scanner Icon **/
+#qr-scanner {
+	position: fixed;
+	right: 5%;
+	bottom: 5%;
+	z-index: 2;
+	border-radius: 3.8vh;
+	width: 10vh;
+	height: 10vh;
+	box-shadow: rgba(0, 0, 0, 0.25) 0.8vh 0.8vh 1vh 0;
+	background-image: url(../images/qr_scanner.svg);
+}
+#qr-scanner:hover {
+	filter: none;
+	box-shadow: rgba(0, 0, 0, 0.35) 0.8vh 0.8vh 1vh 0;
+}
+
+/********** FOOTER **********/
+
+/** Footer **/
+footer {	
+	width: 100%;
+	height: 10vh;
+	background-color: #F8F7F6;
+}
+
+/** Footer Section **/
+.footer-section {
+	position: relative;
+	height: inherit;
+}
+
+/** Footer Text Block **/
+.footer-block {
+	position: absolute;
+	top: 50%;
+	margin: 0;
+    transform: translate(0%, -50%);
+	width: 45%;
+}
+
+/** Website Information **/
+.site-info {
+	padding: 0 2.5vh;
+	color: #444444;
+	font-size: 1.8vh;
+	line-height: 3.2vh;
+	text-decoration: none;
+}

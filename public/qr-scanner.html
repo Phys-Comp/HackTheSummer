@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+		<title>QR-Konsum Webapp</title>
+		<link rel="icon" type="image/svg" href="images/app_logo.svg">
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+		<link rel="stylesheet" type="text/css" href="styles/qr-scanner.css">
+		<link rel="stylesheet" type="text/css" media="all" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css">
+		<link rel="stylesheet" type="text/css" media="all" href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css">
+		<link rel="stylesheet" type="text/css" media="all" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css">
+		<script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+	</head>
+	<body>
+		<div class="menu-bar">
+			<a href="/" id="back-icon" class="icon" title="Zurück"></a>
+			<a href="/" id="app-title" class="menu-title">QR-Konsum</a>
+			<a href="javascript:void(0)" id="search-icon" class="icon" title="Suche"></a>
+			<form action="/search" method="get">
+				<input type="search" id="search-bar" name="q" placeholder="Suche...">
+			</form>
+		</div>
+		<p id="qr-info" class="info" style="padding-top:8vh">Scanne den QR-Code eines Preisschildes!</p>
+		<canvas id="qr-canvas"></canvas>
+		<footer style="position: fixed; bottom: 0">
+			<div class="content footer-section">
+				<div class="footer-block" style="left:0">
+					<a href="/impressum" class="site-info" style="float:left"><i class="fas fa-list-alt"></i> Impressum</a>
+					<a href="/datenschutz" class="site-info" style="float:left"><i class="fas fa-shield-alt"></i> Datenschutz</a>
+				</div>
+				<div class="footer-block" style="right:0">
+					<a href="https://github.com/Phys-Comp" class="site-info" style="float:right"><i class="fa fa-github"></i> GitHub</a>
+					<a href="https://www.youtube.com/channel/UCTlhOdRhwR1OMGZ4_Nb8p4Q/" class="site-info" style="float:right"><i class="fa fa-youtube"></i> YouTube</a>
+				</div>
+			</div>
+		</footer>
+		<script src="script/qr-scanner.js"></script>
+	</body>
+</html>

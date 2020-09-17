@@ -1,0 +1,148 @@
+extends layout_view.pug
+
+block content
+	div.content(style='padding-top:10vh')
+		h1 #{company} - #{name}
+		div.card
+			div.row
+				h2 Produktinformation
+			div.row.wrap
+				div.column
+					h4 #{company} - #{name}
+					h5 #{category}
+					hr.whitespace
+					p.description #{description}
+					a(href=url) #{url}
+				img(src=image_url)
+		div.card
+			div.row.space
+				h2 Herkunft
+				i.fas.fa-chevron-down.expand(onclick='expand(this)')
+			div.map#map
+				script initializeMap(#{main_origin.lat}, #{main_origin.lon}, 3);
+				each origin in sub_origins
+					script addMapPoint(#{origin.lat}, #{origin.lon}, 'sub_origin', '#{origin.name}');
+				script addMapPoint(#{main_origin.lat}, #{main_origin.lon}, 'main_origin', '#{main_origin.name}');
+			div.row.center
+				div.property
+					i.fas.fa-flag.property-icon
+					h4 #{country}
+					h5 Herkunftsland
+				div.property
+					i.fas.fa-truck.property-icon
+					h4 #{transport_distance}km
+					h5 Transportweg
+				div.property
+					i.fas.fa-gas-pump.property-icon
+					h4 #{fuel_consumption}l
+					h5 Treibstoff-Verbrauch
+			div.hidden
+				div.row
+					hr
+				div.row.center
+					div.column
+						p <u>Herkunftsland</u> - Primäres Herstellungsland für das Produkt
+						p <u>Transportweg</u> - Länge des Produktwegs von der Produktion zum Verkauf (in Kilometer)
+						p <u>Treibstoff-Verbrauch</u> - Für den Transport verbrauchter fossiler Treibstoff abhängig vom Transportmittel (in Liter)
+		div.card
+			div.row
+				h2 Nachhaltigkeit
+			div.row.wrap
+				each seal in seals
+					div.seal
+						img(src=seal.url alt=seal.name)
+						h5 #{seal.name}
+		div.card
+			div.row.space
+				h2 Ressourcen
+				i.fas.fa-chevron-down.expand(onclick='expand(this)')
+			div.row.center
+				div.property
+					i.fas.fa-bolt.property-icon
+					h4 #{electric_consumption}J
+					h5 Strom-Verbrauch
+				div.property
+					i.fas.fa-faucet.property-icon
+					h4 #{water_consumption}l
+					h5 Wasser-Verbrauch
+				div.property
+					i.fas.fa-shoe-prints.property-icon
+					h4 #{co2_footprint}t
+					h5 CO<sub>2</sub>-Fußabdruck
+			div.hidden
+				div.row
+					hr
+				div.row.center
+					div.column
+						p <u>Strom-Verbrauch</u> - Für die Herstellung des Produkts verbrauchte elektrische Energie (in Joule)
+						p <u>Wasser-Verbrauch</u> - Für die Herstellung des Produkts verbrauchte Wassermenge (in Liter)
+						p <u>CO<sub>2</sub>-Fußabdruck</u> - Bei Herstellung und Transport des Produkts ausgestoßene CO<sub>2</sub>-Menge (in Tonnen)
+		div.card
+			div.row.space
+				h2 Soziales
+				i.fas.fa-chevron-down.expand(onclick='expand(this)')
+			div.row.center
+				div.property
+					i.fas.fa-balance-scale-left.property-icon
+					h4 #{poverty_rate}%
+					h5 Armutsrate
+				div.property
+					i.fas.property-icon(class=worker_satisfaction < 33 ? 'fa-frown' : worker_satisfaction < 66 ? 'fa-meh' : 'fa-smile')
+					h4 #{worker_satisfaction}%
+					h5 Arbeiter-Zufriedenheit
+				div.property
+					i.fas.fa-money-bill-wave.property-icon
+					h4 #{salary}€
+					h5 Arbeiterlohn
+			div.hidden
+				div.row
+					hr
+				div.row.center
+					div.column
+						p <u>Armutsrate</u> - Anteil der Einwohner des Herstellungslandes mit einem Einkommen unter 1.6€ pro Tag
+						p <u>Arbeiter-Zufriedenheit</u> - Prozentuale Zufriedenheit der Arbeiter in allen Standorten (Umfragewerte)
+						p <u>Arbeiterlohn</u> - Durchschnittlicher Arbeiterlohn im Herstellungsland
+		div.card
+			div.row
+				h2 Zutaten
+			div.row
+				p.description #{ingredients}
+		div.card
+			div.row.space
+				h2 Nährwerte
+				i.fas.fa-chevron-down.expand(onclick='expand(this)')
+			each info in nutrition_info
+				div.row(style='width:calc(100%-4vh)')
+					h4.nutrition-info #{info.name}
+					div.progress
+						p.nutrition-value(style='float: right') #{info.name == 'Energie' ? 'für 100g' : 'von 100g'}
+						div.progress-bar(style='width: ' + (info.name == 'Energie' ? (info.value / 84) : info.value) + '%')
+							p.nutrition-value #{info.value + (info.name == 'Energie' ? 'kJ' : 'g')}
+			div.hidden
+				div.row
+					hr
+				div.row.center
+					div.column
+						p <u>Energie</u> - Energie relativ zur Referenzmenge für einen durchschnittlichen Erwachsenen (8400kJ)
+						p <u>Nährwerte</u> - Durschnittliche Nährwerte pro 100g
+		div.card
+			div.row.space
+				h2 Ernährungshinweise
+				i.fas.fa-chevron-down.expand(onclick='expand(this)')
+			div.row.center.wrap
+				each intolerance in intolerances
+					div.seal(style='position:relative')
+						- if(intolerance.contains)
+							i.fa.fa-exclamation.property-icon
+						- else if(intolerance.free)
+							img.intolerance(src=intolerance.url alt=intolerance.name)
+						- else
+							i.fa.fa-question.property-icon
+						h4.intolerance-text() #{intolerance.name}
+			div.hidden
+				div.row
+					hr
+				div.row.center
+					div.column
+						p <u>Gluten</u> - Klebeeiweiß verschiedener Getreidesorten (Weizen, Roggen, Gerste, Dinkel, ...)
+						p <u>Laktose</u> - Milchzucker in Kuhmilch (auch Schafsmilch, Ziegenmilch, Stutenmilch)

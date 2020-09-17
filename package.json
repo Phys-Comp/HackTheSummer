@@ -1,0 +1,36 @@
+{
+  "name": "hackthesummer",
+  "version": "1.0.0",
+  "description": "This is the HackTheSummer project.",
+  "main": "Webserver.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^3.0.0",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Phys-Comp/HackTheSummer.git"
+  },
+  "keywords": [
+    "HackTheSummer",
+	"PhysComp",
+    "Sustainability",
+    "QR-Code",
+    "Consumption",
+    "App",
+    "Webapp",
+    "ProductInformation"
+  ],
+  "author": "PhysComp",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Phys-Comp/HackTheSummer/issues"
+  },
+  "homepage": "https://github.com/Phys-Comp/HackTheSummer#readme",
+  "private": true
+}

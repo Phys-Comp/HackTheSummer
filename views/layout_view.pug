@@ -1,0 +1,51 @@
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+		title QR-Konsum Webapp
+		link(rel='icon' type='image/svg' href='/images/app_logo.svg')
+		link(rel='stylesheet' type='text/css' href='/styles/style.css')
+		link(rel='stylesheet' type='text/css' href='https://openlayers.org/en/latest/css/ol.css')
+		link(rel='stylesheet' type='text/css' media='all' href='https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css')
+		link(rel='stylesheet' type='text/css' media='all' href='https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css')
+		link(rel='stylesheet' type='text/css' media='all' href='https://kit-free.fontawesome.com/releases/latest/css/free.min.css')
+		script(src='/script/script.js')
+		script(src='https://openlayers.org/en/v4.6.5/build/ol.js')
+	body
+		div.menu-bar
+			a.icon#menu-icon(href='javascript:openNavigation()' title='Optionen')
+			a.menu-title#app-title(href='/') QR-Konsum
+			a.icon#search-icon(href='javascript:submit()' title='Suche')
+			form(action='/search' method='get')
+				input#search-bar(type='search' name='q' placeholder='Suche...')
+		div.side-navigation
+			div.navigation-title
+				a.icon#close-icon(href='javascript:closeNavigation()' title='Schließen')
+			a.category(href="javascript:search('category', 'Bücher')") Bücher
+			hr
+			a.category(href="javascript:search('category', 'Einrichtung')") Einrichtung
+			hr
+			a.category(href="javascript:search('category', 'Elektronik')") Elektronik
+			hr
+			a.category(href="javascript:search('category', 'Haushalt')") Haushalt
+			hr
+			a.category(href="javascript:search('category', 'Kleidung')") Kleidung
+			hr
+			a.category(href="javascript:search('category', 'Lebensmittel')") Lebensmittel
+			hr
+			a.category(href="javascript:search('category', 'Software')") Software
+			hr
+			a.category(href="javascript:search('category', 'Spielzeug')") Spielzeug
+			hr
+			a.category(href="javascript:search('category', 'Sport/Freizeit')") Sport/Freizeit
+		a.icon#qr-scanner(href='/qr-scanner.html' title='QR-Code Scannen!')
+		block content
+		footer
+			div.content.footer-section
+				div.footer-block(style='float:left')
+					a.site-info(href='/impressum' style='left:0') <i class='fas fa-list-alt'></i> Impressum
+					a.site-info(href='/datenschutz' style='float:left') <i class='fas fa-shield-alt'></i> Datenschutz
+				div.footer-block(style='right:0')
+					a.site-info(href='https://github.com/Phys-Comp' style='float:right') <i class='fa fa-github'></i> GitHub
+					a.site-info(href='https://www.youtube.com/channel/UCTlhOdRhwR1OMGZ4_Nb8p4Q/' style='float:right') <i class='fa fa-youtube'></i> YouTube
